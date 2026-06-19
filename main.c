@@ -608,7 +608,7 @@ int quit(int f, int n)
 	    || anycb() == FALSE	/* All buffers clean.   */
 	    /* User says it's OK.   */
 	    || (s =
-		mlyesno("Modified buffers exist. Leave anyway")) == TRUE) {
+		mlyesno("Wait:< Buffers still exist")) == TRUE) {
 #if	(FILOCK && BSD) || SVR4
 		if (lockrel() != TRUE) {
 			TTputc('\n');
@@ -691,7 +691,7 @@ int ctrlg(int f, int n)
 {
 	TTbeep();
 	kbdmode = STOP;
-	mlwrite("(Aborted)");
+	mlwrite("Aborted:)");
 	return ABORT;
 }
 
@@ -709,7 +709,7 @@ int rdonly(void)
 int resterr(void)
 {
 	TTbeep();
-	mlwrite("(That command is RESTRICTED)");
+	mlwrite("(Dat command? it's RESTRICTED)");
 	return FALSE;
 }
 
