@@ -240,7 +240,7 @@ int delwind(int f, int n)
 
 	/* if there is only one window, don't delete it */
 	if (wheadp->w_wndp == NULL) {
-		mlwrite("Can not delete this window");
+		mlwrite("Wanna delete this window? nah:3");
 		return FALSE;
 	}
 
@@ -407,7 +407,7 @@ int enlargewind(int f, int n)
 			adjwp = adjwp->w_wndp;
 	}
 	if (adjwp->w_ntrows <= n) {
-		mlwrite("Impossible change");
+		mlwrite("Impossible change:<");
 		return FALSE;
 	}
 	if (curwp->w_wndp == adjwp) {	/* Shrink below.        */
@@ -458,7 +458,7 @@ int shrinkwind(int f, int n)
 			adjwp = adjwp->w_wndp;
 	}
 	if (curwp->w_ntrows <= n) {
-		mlwrite("Impossible change");
+		mlwrite("Impossible change:<");
 		return FALSE;
 	}
 	if (curwp->w_wndp == adjwp) {	/* Grow below.          */
